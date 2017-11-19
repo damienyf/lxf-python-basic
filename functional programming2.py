@@ -102,7 +102,7 @@ def log(func):
 
 
 # 针对带参数的decorator
-
+import functools
 def log(text):
     def decorator(func):
         @functools.wraps(func)
@@ -115,3 +115,26 @@ def log(text):
 @log('execute')
 def now():
     print('2015-03-25')
+
+
+# partial function can fix parameter to create new function
+# like setting default paramter
+import functools
+int2 = functools.partial(int, base=2)
+
+int2('100')
+
+# but you can always reset it
+int2('10000', base=10)
+
+# functools.partial can take three parameters: function, *args, **kw
+# e.g. int2 = functools.partial(int, base=2)
+# int2('100') is equivalent to kw = { 'base': 2 }
+# int('100', **kw)
+
+# add *args
+max2 = functools.partial(max, 10)
+
+max2(2, 4, 6)
+# is equivalent to args = (10,2,4,6)
+# max(*args)
