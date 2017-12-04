@@ -118,6 +118,8 @@ class Student(object):
 # 当调用不存在的属性时，比如score，Python解释器会试图调用__getattr__(self, 'score')
 # 来尝试获得属性，这样，我们就有机会返回score的值：
 s = Student()
+
+# return a number or return a function:
 s.score
 s.age()
 
@@ -133,6 +135,7 @@ class Student(object):
         # getattr can return a lambda function(no parameter)
         if attr == 'age':
             return lambda: 25
+        # if we don't want getattr to return None:
         raise AttributeError('Message from getattr: \'Student\' object has no attribute \'%s\'' % attr)
 
 # 用完全动态的__getattr__，我们可以写出一个链式调用：
