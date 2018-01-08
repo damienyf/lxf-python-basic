@@ -154,7 +154,7 @@ class Chain(object):
 
     __repr__ = __str__
 
-c = Chain().status.user.txt
+c = Chain().status.user.txt.subpath1.subpath2
 # __getattr__ method is called three times 
 # it's similar to call:
 # Chain()
@@ -197,6 +197,7 @@ class Chain(object):
 
     # repr copies the str function
     __repr__ = __str__
+
 Chain().users('damienyf').repos
 
 # __call__

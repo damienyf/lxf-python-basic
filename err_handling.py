@@ -140,3 +140,13 @@ print(10 / n)
 # Python的调试器pdb
 import pdb
 pdb.set_trace()
+
+import numpy as np
+y = np.random.random(10**5).astype(np.float32)
+
+def clip(y, a, b):
+    if y < a:
+        return a
+    if y > b:
+        return b
+    return y
