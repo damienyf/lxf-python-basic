@@ -23,7 +23,7 @@ d
 # pickle is not compatible across python versions
 # check the compression parameter
 
-
+# json is better to support web
 # JSON
 import json
 d = dict(name='Bob', age=20, score=88)
@@ -63,7 +63,6 @@ print(json.dumps(s, default=student2dict))
 # 把任意class的实例变为dict:
 # 因为通常class的实例都有一个__dict__属性，它就是一个dict
 print(json.dumps(s, default=lambda obj: obj.__dict__))
-
 
 # 把dict转换为Student实例
 def dict2student(d):
